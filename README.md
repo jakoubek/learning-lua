@@ -14,6 +14,29 @@ print(("It is now %s."):format("April"))
 print(string.format("It is now %s.", "April"))
 ```
 
+## Working with strings
+
+### Splitting a string
+
+```lua
+function split(s)
+    return s:match("([^,]+),([^,]+)")
+end
+```
+
+... returns the first match - in this case: everything before the comma (,).
+
+
+### Trimming a string
+
+Strings often come with leading or trailing spaces. This trim function removes those spaces from a string:
+
+```lua
+function trim(s)
+    return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+```
+
 
 ## Scripts
 

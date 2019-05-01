@@ -2,7 +2,9 @@
 
 Some miscellaneous notes on my way to learn Lua
 
-## Formatting strings
+## Working with strings
+
+### Formatting strings
 
 Two variants exist. I don't know yet which one is *better* or newer. The first one pleases me more I think ....
 
@@ -13,8 +15,6 @@ print(("It is now %s."):format("April"))
 ```lua
 print(string.format("It is now %s.", "April"))
 ```
-
-## Working with strings
 
 ### Splitting a string
 
@@ -37,6 +37,15 @@ function trim(s)
 end
 ```
 
+## Command line parameters
+
+Command line parameters for a script are available in a table named *arg*. Like every Lua table the table indices start at 1. The first command line parameter is in *arg[1]*. But how many parameters are there anyway? The `#` operator returns the number of elements in a table **as long as the table has integer indices**.
+
+```lua
+if #arg == 2 then
+  print(("There are two parameters: %s and %s"):format(arg[1], arg[2]))
+end
+```
 
 ## Scripts
 
